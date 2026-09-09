@@ -1,5 +1,7 @@
 # RegIns
 
+[![AI Slop Inside](https://sladge.net/badge.svg)](https://sladge.net)
+
 C#/.NET 11 offline registry hive inspection, salvage and reconstruction, with a CLI and Avalonia GUI. The recovery engine is managed code and uses no OS registry APIs. BCD is treated as an ordinary hive.
 
 **Status: experimental recovery implementation, not completion of the full recovery roadmap.** Ordinary hive/log recovery and a frozen corruption corpus are implemented. TxR/CLFS replay and direct offline VSS store parsing are not implemented. See [support and limits](docs/support.md).
