@@ -46,6 +46,10 @@ Default limits are 1 GiB scanned, 250,000 records, 16 MiB per value, 256 MiB evi
 
 ## Library
 
+`RegIns.Core` is published to the [GitHub Packages feed](https://github.com/pog5/RegIns/packages) at `https://nuget.pkg.github.com/pog5/index.json`. It targets .NET 11. GitHub's NuGet registry requires authentication for installation, including public packages; use a token with `read:packages` through your NuGet credential configuration. Do not commit credentials.
+
+After configuring the feed, install with `dotnet add package RegIns.Core --version 1.0.0`. The `publish-nuget` workflow tests and publishes release tags, then verifies installation from the registry. Existing releases can be published through its manual tag input. This feed is separate from nuget.org.
+
 ```csharp
 using RegIns;
 

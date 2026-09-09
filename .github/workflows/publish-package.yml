@@ -1,0 +1,68 @@
+name: publish-nuget
+on:
+  release:
+    types: [published]
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: Existing release tag to publish
+        required: true
+        default: v1.0.0
+permissions:
+  contents: read
+concurrency:
+  group: nuget-${{ github.event.release.tag_name || inputs.tag }}
+  cancel-in-progress: false
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+    env:
+      RELEASE_TAG: ${{ github.event.release.tag_name || inputs.tag }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.release.tag_name || inputs.tag }}
+      - uses: actions/setup-dotnet@v4
+        with:
+          global-json-file: global.json
+      - name: Verify release version
+        shell: bash
+        run: |
+          set -euo pipefail
+          [[ "$RELEASE_TAG" =~ ^v[0-9]+\.[0-9]+\.[0-9]+$ ]]
+          version=$(dotnet msbuild src/RegIns.Core/RegIns.Core.csproj -getProperty:Version -nologo)
+          test "$version" = "${RELEASE_TAG#v}"
+      - run: dotnet build RegIns.slnx -c Release
+      - run: dotnet tests/RegIns.Tests/bin/Release/net11.0/RegIns.Tests.dll
+      - run: dotnet tests/RegIns.Tests/bin/Release/net11.0/RegIns.Tests.dll --corpus tests/corpus corpus-report.json
+      - name: Pack library
+        run: >-
+          dotnet pack src/RegIns.Core -c Release -o packages
+          -p:ContinuousIntegrationBuild=true
+          -p:RepositoryUrl=https://github.com/pog5/RegIns
+          -p:RepositoryType=git
+          -p:PackageProjectUrl=https://github.com/pog5/RegIns
+      - name: Publish to GitHub Packages
+        env:
+          PACKAGE_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: >-
+          dotnet nuget push packages/*.nupkg
+          --source https://nuget.pkg.github.com/pog5/index.json
+          --api-key "$PACKAGE_TOKEN" --skip-duplicate
+      - name: Verify package can be restored from the registry
+        env:
+          NuGetPackageSourceCredentials_github: Username=${{ github.actor }};Password=${{ secrets.GITHUB_TOKEN }};ValidAuthenticationTypes=Basic
+        shell: bash
+        run: |
+          set -euo pipefail
+          smoke="$RUNNER_TEMP/package-smoke"
+          dotnet new classlib -n PackageSmoke -o "$smoke" --framework net11.0 --no-restore
+          cat > "$smoke/NuGet.Config" <<'EOF'
+          <configuration><packageSources><clear/><add key="github" value="https://nuget.pkg.github.com/pog5/index.json" /></packageSources></configuration>
+          EOF
+          dotnet add "$smoke/PackageSmoke.csproj" package RegIns.Core --version "${RELEASE_TAG#v}" --no-restore
+          dotnet restore "$smoke/PackageSmoke.csproj" --configfile "$smoke/NuGet.Config" --packages "$smoke/cache" --no-http-cache
+          dotnet build "$smoke/PackageSmoke.csproj" --no-restore
