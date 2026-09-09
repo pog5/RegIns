@@ -1,0 +1,6 @@
+**/bin/
+**/obj/
+artifacts/
+output/
+.vs/
+test-or-mess-with-on-this-hive/

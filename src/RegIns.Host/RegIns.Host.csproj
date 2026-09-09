@@ -1,0 +1,1 @@
+<Project Sdk="Microsoft.NET.Sdk"><ItemGroup><ProjectReference Include="../RegIns.Core/RegIns.Core.csproj" /></ItemGroup></Project>

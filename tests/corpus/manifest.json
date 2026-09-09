@@ -1,0 +1,667 @@
+{
+  "version": 1,
+  "generator": "independent Python struct builder; no RegIns imports or execution",
+  "clean_sha256": "8b891eaa212f0dac7e8161316ca10e8a0d857225b573cd2501c57d602239e293",
+  "locations": {
+    "root": 4128,
+    "alpha": 4216,
+    "beta": 4312,
+    "leaf": 4400,
+    "root-index": 4488,
+    "alpha-index": 4504,
+    "security": 4520,
+    "version": 4568,
+    "version-list": 4608,
+    "text-data": 4616,
+    "text": 4656,
+    "text-list": 4696,
+    "binary-data": 4704,
+    "binary": 4840,
+    "binary-list": 4880,
+    "empty": 4888,
+    "empty-list": 4912
+  },
+  "values": {
+    "version": {
+      "key": "root",
+      "name": "Version",
+      "type": 4,
+      "hex": "01020304"
+    },
+    "text": {
+      "key": "alpha",
+      "name": "Greeting",
+      "type": 1,
+      "hex": "680065006c006c006f002d00720065006700690073007400720079000000"
+    },
+    "binary": {
+      "key": "beta",
+      "name": "Bytes",
+      "type": 3,
+      "hex": "000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d3e3f404142434445464748494a4b4c4d4e4f505152535455565758595a5b5c5d5e5f606162636465666768696a6b6c6d6e6f707172737475767778797a7b7c7d7e7f"
+    },
+    "empty": {
+      "key": "leaf",
+      "name": "",
+      "type": 0,
+      "hex": ""
+    }
+  },
+  "cases": [
+    {
+      "name": "00-clean",
+      "file": "00-clean\\SYSTEM",
+      "sha256": "8b891eaa212f0dac7e8161316ca10e8a0d857225b573cd2501c57d602239e293",
+      "expected_keys": [
+        "ROOT",
+        "Alpha",
+        "Beta",
+        "Leaf"
+      ],
+      "expected_values": [
+        "version",
+        "text",
+        "binary",
+        "empty"
+      ],
+      "known_loss": [],
+      "holes": [],
+      "bins_offset": 4096,
+      "backup_recovery": false
+    },
+    {
+      "name": "01-zero-base",
+      "file": "01-zero-base\\SYSTEM",
+      "sha256": "ddb7df20cf7bf9e02c6b1a5c489396cbf3ab5dd381f00c95c7e7533674bd8609",
+      "expected_keys": [
+        "ROOT",
+        "Alpha",
+        "Beta",
+        "Leaf"
+      ],
+      "expected_values": [
+        "version",
+        "text",
+        "binary",
+        "empty"
+      ],
+      "known_loss": [],
+      "holes": [],
+      "bins_offset": 4096,
+      "backup_recovery": false
+    },
+    {
+      "name": "02-zero-bin-header",
+      "file": "02-zero-bin-header\\SYSTEM",
+      "sha256": "ae06784ec0c825415e77d1051e9ccece76920c27341a712d44009c1789385456",
+      "expected_keys": [
+        "ROOT",
+        "Alpha",
+        "Beta",
+        "Leaf"
+      ],
+      "expected_values": [
+        "version",
+        "text",
+        "binary",
+        "empty"
+      ],
+      "known_loss": [],
+      "holes": [],
+      "bins_offset": 4096,
+      "backup_recovery": false
+    },
+    {
+      "name": "03-zero-base-and-bin",
+      "file": "03-zero-base-and-bin\\SYSTEM",
+      "sha256": "27e8feb182bc4bd93fa45e42d5df03ec01bfac974424b4352a5d4018d3617703",
+      "expected_keys": [
+        "ROOT",
+        "Alpha",
+        "Beta",
+        "Leaf"
+      ],
+      "expected_values": [
+        "version",
+        "text",
+        "binary",
+        "empty"
+      ],
+      "known_loss": [],
+      "holes": [],
+      "bins_offset": 4096,
+      "backup_recovery": false
+    },
+    {
+      "name": "04-bogus-root-reference",
+      "file": "04-bogus-root-reference\\SYSTEM",
+      "sha256": "f3802d0c5a5a9bdda09bdfb3aea612a2cc985b1a515fc5b4fff0ee7aefc4b82e",
+      "expected_keys": [
+        "ROOT",
+        "Alpha",
+        "Beta",
+        "Leaf"
+      ],
+      "expected_values": [
+        "version",
+        "text",
+        "binary",
+        "empty"
+      ],
+      "known_loss": [],
+      "holes": [],
+      "bins_offset": 4096,
+      "backup_recovery": false
+    },
+    {
+      "name": "05-0-broken-key-cell-size",
+      "file": "05-0-broken-key-cell-size\\SYSTEM",
+      "sha256": "d338bdf623f4e5b6f23921302792d5ec0dd27e2adda44dbaa1f32adf4d0903cc",
+      "expected_keys": [
+        "ROOT",
+        "Alpha",
+        "Beta",
+        "Leaf"
+      ],
+      "expected_values": [
+        "version",
+        "text",
+        "binary",
+        "empty"
+      ],
+      "known_loss": [],
+      "holes": [],
+      "bins_offset": 4096,
+      "backup_recovery": false
+    },
+    {
+      "name": "05-1-broken-key-cell-size",
+      "file": "05-1-broken-key-cell-size\\SYSTEM",
+      "sha256": "f00f89332997c3de5998f4a4ff1f18c74817b85ad966e559094c5d155a14a650",
+      "expected_keys": [
+        "ROOT",
+        "Alpha",
+        "Beta",
+        "Leaf"
+      ],
+      "expected_values": [
+        "version",
+        "text",
+        "binary",
+        "empty"
+      ],
+      "known_loss": [],
+      "holes": [],
+      "bins_offset": 4096,
+      "backup_recovery": false
+    },
+    {
+      "name": "05-2-broken-key-cell-size",
+      "file": "05-2-broken-key-cell-size\\SYSTEM",
+      "sha256": "c26d71f1cb0073ae9b3cc821caafba0afe8ba08b0d81b80f555cc9593129d2cb",
+      "expected_keys": [
+        "ROOT",
+        "Alpha",
+        "Beta",
+        "Leaf"
+      ],
+      "expected_values": [
+        "version",
+        "text",
+        "binary",
+        "empty"
+      ],
+      "known_loss": [],
+      "holes": [],
+      "bins_offset": 4096,
+      "backup_recovery": false
+    },
+    {
+      "name": "05-3-broken-key-cell-size",
+      "file": "05-3-broken-key-cell-size\\SYSTEM",
+      "sha256": "0488d55600568c08fa296a586710488eaa31e8bc022f2ea1c31442c69dabdc0d",
+      "expected_keys": [
+        "ROOT",
+        "Alpha",
+        "Beta",
+        "Leaf"
+      ],
+      "expected_values": [
+        "version",
+        "text",
+        "binary",
+        "empty"
+      ],
+      "known_loss": [],
+      "holes": [],
+      "bins_offset": 4096,
+      "backup_recovery": false
+    },
+    {
+      "name": "06-broken-parent-index-survives",
+      "file": "06-broken-parent-index-survives\\SYSTEM",
+      "sha256": "832124004290a1512fba7b6d5702c0fc0122c674e3e34f69515c0f0e14575a58",
+      "expected_keys": [
+        "ROOT",
+        "Alpha",
+        "Beta",
+        "Leaf"
+      ],
+      "expected_values": [
+        "version",
+        "text",
+        "binary",
+        "empty"
+      ],
+      "known_loss": [],
+      "holes": [],
+      "bins_offset": 4096,
+      "backup_recovery": false,
+      "expected_parent": {
+        "Beta": "ROOT"
+      }
+    },
+    {
+      "name": "07-erased-index-signature",
+      "file": "07-erased-index-signature\\SYSTEM",
+      "sha256": "6346ca2fe6a3bd48fb53e47bd203aed7d7cfa6bdbccd6a9b0622c4bbc9e12344",
+      "expected_keys": [
+        "ROOT",
+        "Alpha",
+        "Beta",
+        "Leaf"
+      ],
+      "expected_values": [
+        "version",
+        "text",
+        "binary",
+        "empty"
+      ],
+      "known_loss": [],
+      "holes": [],
+      "bins_offset": 4096,
+      "backup_recovery": false
+    },
+    {
+      "name": "08-erased-key-signature",
+      "file": "08-erased-key-signature\\SYSTEM",
+      "sha256": "fed08fe16daaaa8000a18256ba7baea0fc6e758b88800b2473f81e2b63931cf4",
+      "expected_keys": [
+        "ROOT",
+        "Alpha",
+        "Beta",
+        "Leaf"
+      ],
+      "expected_values": [
+        "version",
+        "text",
+        "binary",
+        "empty"
+      ],
+      "known_loss": [],
+      "holes": [],
+      "bins_offset": 4096,
+      "backup_recovery": false
+    },
+    {
+      "name": "09-moved-key-record",
+      "file": "09-moved-key-record\\SYSTEM",
+      "sha256": "0b0b0e1e0b197667ae7840cf0f2d603055a5ebb6a5f057068ba3a70096942528",
+      "expected_keys": [
+        "ROOT",
+        "Alpha",
+        "Beta",
+        "Leaf"
+      ],
+      "expected_values": [
+        "version",
+        "text",
+        "binary",
+        "empty"
+      ],
+      "known_loss": [],
+      "holes": [],
+      "bins_offset": 4096,
+      "backup_recovery": false
+    },
+    {
+      "name": "10-moved-value-record",
+      "file": "10-moved-value-record\\SYSTEM",
+      "sha256": "d3577d4bce42e707442dcdfe05243ce61eadad3af1925382c04b46d11c7535ef",
+      "expected_keys": [
+        "ROOT",
+        "Alpha",
+        "Beta",
+        "Leaf"
+      ],
+      "expected_values": [
+        "version",
+        "binary",
+        "empty"
+      ],
+      "known_loss": [
+        "Value ownership reference erased; Greeting must survive as unowned evidence."
+      ],
+      "holes": [],
+      "bins_offset": 4096,
+      "backup_recovery": false,
+      "expected_unowned": [
+        "Greeting"
+      ]
+    },
+    {
+      "name": "11-zero-payload-bytes",
+      "file": "11-zero-payload-bytes\\SYSTEM",
+      "sha256": "f27ac419a09ace4517109dd74bf82e60cbfce372b8669ad72727e01f6e204128",
+      "expected_keys": [
+        "ROOT",
+        "Alpha",
+        "Beta",
+        "Leaf"
+      ],
+      "expected_values": [
+        "version",
+        "text",
+        "empty"
+      ],
+      "known_loss": [
+        "Zeroes are readable bytes; there is no evidence these seven bytes were overwritten."
+      ],
+      "holes": [],
+      "bins_offset": 4096,
+      "backup_recovery": false,
+      "expected_binary_zero_run": [
+        17,
+        7
+      ]
+    },
+    {
+      "name": "12-unreadable-payload-hole",
+      "file": "12-unreadable-payload-hole\\SYSTEM",
+      "sha256": "8b891eaa212f0dac7e8161316ca10e8a0d857225b573cd2501c57d602239e293",
+      "expected_keys": [
+        "ROOT",
+        "Alpha",
+        "Beta",
+        "Leaf"
+      ],
+      "expected_values": [
+        "version",
+        "text",
+        "empty"
+      ],
+      "known_loss": [
+        "Seven payload bytes unavailable; preserve remaining extents."
+      ],
+      "holes": [
+        [
+          4725,
+          7
+        ]
+      ],
+      "bins_offset": 4096,
+      "backup_recovery": false,
+      "expected_partial_value": "Bytes",
+      "expected_readable_bytes": 121
+    },
+    {
+      "name": "13-truncated-tail",
+      "file": "13-truncated-tail\\SYSTEM",
+      "sha256": "9e5c4a593d034241d70972cd23328370e2b3b7aa37a61190f4e06646f6fce1cc",
+      "expected_keys": [
+        "ROOT",
+        "Alpha",
+        "Beta",
+        "Leaf"
+      ],
+      "expected_values": [
+        "version",
+        "text"
+      ],
+      "known_loss": [
+        "Tail value records and their lists are absent."
+      ],
+      "holes": [],
+      "bins_offset": 4096,
+      "backup_recovery": false
+    },
+    {
+      "name": "14-exploding-value-count",
+      "file": "14-exploding-value-count\\SYSTEM",
+      "sha256": "be42a599960464abc79421fb7fe5e4cbddbd7b931dde735dcb9374c032be9104",
+      "expected_keys": [
+        "ROOT",
+        "Alpha",
+        "Beta",
+        "Leaf"
+      ],
+      "expected_values": [
+        "version",
+        "text",
+        "binary",
+        "empty"
+      ],
+      "known_loss": [],
+      "holes": [],
+      "bins_offset": 4096,
+      "backup_recovery": false
+    },
+    {
+      "name": "15-self-referencing-index",
+      "file": "15-self-referencing-index\\SYSTEM",
+      "sha256": "aa8b2ea5f6c66c2306cfcbdfd0cc7b342834d8a3b6a52402fcbd7bf45fda319c",
+      "expected_keys": [
+        "ROOT",
+        "Alpha",
+        "Beta",
+        "Leaf"
+      ],
+      "expected_values": [
+        "version",
+        "text",
+        "binary",
+        "empty"
+      ],
+      "known_loss": [],
+      "holes": [],
+      "bins_offset": 4096,
+      "backup_recovery": false
+    },
+    {
+      "name": "16-parent-cycle-index-survives",
+      "file": "16-parent-cycle-index-survives\\SYSTEM",
+      "sha256": "b983eac2c8544252475cb8cf1c0e2ace32d63b7385936262b5d63b40c51620b0",
+      "expected_keys": [
+        "ROOT",
+        "Alpha",
+        "Beta",
+        "Leaf"
+      ],
+      "expected_values": [
+        "version",
+        "text",
+        "binary",
+        "empty"
+      ],
+      "known_loss": [],
+      "holes": [],
+      "bins_offset": 4096,
+      "backup_recovery": false,
+      "expected_parent": {
+        "Beta": "ROOT"
+      }
+    },
+    {
+      "name": "17-empty-with-regback",
+      "file": "17-empty-with-regback\\SYSTEM",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "expected_keys": [
+        "ROOT",
+        "Alpha",
+        "Beta",
+        "Leaf"
+      ],
+      "expected_values": [
+        "version",
+        "text",
+        "binary",
+        "empty"
+      ],
+      "known_loss": [],
+      "holes": [],
+      "bins_offset": 4096,
+      "backup_recovery": true,
+      "backup_sha256": "8b891eaa212f0dac7e8161316ca10e8a0d857225b573cd2501c57d602239e293"
+    },
+    {
+      "name": "18-empty-without-backup",
+      "file": "18-empty-without-backup\\SYSTEM",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "expected_keys": [],
+      "expected_values": [],
+      "known_loss": [
+        "No bytes or alternate sources exist; no recovery is possible."
+      ],
+      "holes": [],
+      "bins_offset": 4096,
+      "backup_recovery": false
+    },
+    {
+      "name": "19-all-zero-without-backup",
+      "file": "19-all-zero-without-backup\\SYSTEM",
+      "sha256": "f3cc103136423a57975750907ebc1d367e2985ac6338976d4d5a439f50323f4a",
+      "expected_keys": [],
+      "expected_values": [],
+      "known_loss": [
+        "All evidence destroyed; do not invent a tree."
+      ],
+      "holes": [],
+      "bins_offset": 4096,
+      "backup_recovery": false
+    },
+    {
+      "name": "20-all-zero-with-regback",
+      "file": "20-all-zero-with-regback\\SYSTEM",
+      "sha256": "f3cc103136423a57975750907ebc1d367e2985ac6338976d4d5a439f50323f4a",
+      "expected_keys": [
+        "ROOT",
+        "Alpha",
+        "Beta",
+        "Leaf"
+      ],
+      "expected_values": [
+        "version",
+        "text",
+        "binary",
+        "empty"
+      ],
+      "known_loss": [],
+      "holes": [],
+      "bins_offset": 4096,
+      "backup_recovery": true,
+      "backup_sha256": "8b891eaa212f0dac7e8161316ca10e8a0d857225b573cd2501c57d602239e293"
+    },
+    {
+      "name": "21-misaligned-whole-hive",
+      "file": "21-misaligned-whole-hive\\SYSTEM",
+      "sha256": "8eb39674aa3c49a27b72d8cae8af18b981250d63bd6314b6fdd9cc6e095cdff2",
+      "expected_keys": [
+        "ROOT",
+        "Alpha",
+        "Beta",
+        "Leaf"
+      ],
+      "expected_values": [
+        "version",
+        "text",
+        "binary",
+        "empty"
+      ],
+      "known_loss": [],
+      "holes": [],
+      "bins_offset": 4133,
+      "backup_recovery": false,
+      "expected_carved_hive": 37
+    },
+    {
+      "name": "22-erased-key-name",
+      "file": "22-erased-key-name\\SYSTEM",
+      "sha256": "e53f8224e30f946cb8991e812d657adea303f2301fa414ca86a37b467aba9d9b",
+      "expected_keys": [
+        "ROOT",
+        "Beta",
+        "Leaf"
+      ],
+      "expected_values": [
+        "version",
+        "binary",
+        "empty"
+      ],
+      "known_loss": [
+        "Alpha name destroyed; its former values may remain unowned."
+      ],
+      "holes": [],
+      "bins_offset": 4096,
+      "backup_recovery": false
+    },
+    {
+      "name": "23-destroyed-security",
+      "file": "23-destroyed-security\\SYSTEM",
+      "sha256": "c7994cb013e19edc4bf6ead76d3ee776dc273ed354566c0a5945a492999b1f58",
+      "expected_keys": [
+        "ROOT",
+        "Alpha",
+        "Beta",
+        "Leaf"
+      ],
+      "expected_values": [
+        "version",
+        "text",
+        "binary",
+        "empty"
+      ],
+      "known_loss": [],
+      "holes": [],
+      "bins_offset": 4096,
+      "backup_recovery": false,
+      "export_requires_security_replacement": true
+    },
+    {
+      "name": "24-combined-structural-damage",
+      "file": "24-combined-structural-damage\\SYSTEM",
+      "sha256": "64943d0fac0c3b8cc7d4b8af6d84a9fff7d761350f37019bb564f911d75ef00e",
+      "expected_keys": [
+        "ROOT",
+        "Alpha",
+        "Beta",
+        "Leaf"
+      ],
+      "expected_values": [
+        "version",
+        "text",
+        "binary",
+        "empty"
+      ],
+      "known_loss": [],
+      "holes": [],
+      "bins_offset": 4096,
+      "backup_recovery": false
+    },
+    {
+      "name": "25-two-hives-separated",
+      "file": "25-two-hives-separated\\SYSTEM",
+      "sha256": "73333ecec6dc5f1c111201c644e88aadacb02603ada3a98fa8932fea8198d4ad",
+      "expected_keys": [],
+      "expected_values": [],
+      "known_loss": [],
+      "holes": [],
+      "bins_offset": 4096,
+      "backup_recovery": false,
+      "carving_only": true,
+      "expected_hive_offsets": [
+        0,
+        12801
+      ]
+    }
+  ]
+}

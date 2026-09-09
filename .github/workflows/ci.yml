@@ -1,0 +1,21 @@
+name: build-and-recovery
+on: [push, pull_request]
+jobs:
+  verify:
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-dotnet@v4
+        with:
+          global-json-file: global.json
+      - run: dotnet build RegIns.slnx -c Release
+      - run: dotnet tests/RegIns.Tests/bin/Release/net11.0/RegIns.Tests.dll
+      - run: dotnet tests/RegIns.Tests/bin/Release/net11.0/RegIns.Tests.dll --corpus tests/corpus corpus-report.json
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: corpus-${{ matrix.os }}
+          path: corpus-report.json

@@ -1,0 +1,1 @@
+<Project Sdk="Microsoft.NET.Sdk"><PropertyGroup><PackageId>RegIns.Core</PackageId><Description>Managed offline registry hive inspection and salvage.</Description><PackageReadmeFile>README.md</PackageReadmeFile></PropertyGroup><ItemGroup><None Include="../../README.md" Pack="true" PackagePath="/" /></ItemGroup></Project>

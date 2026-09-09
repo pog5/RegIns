@@ -1,0 +1,7 @@
+<Solution>
+  <Project Path="src/RegIns.Core/RegIns.Core.csproj" />
+  <Project Path="src/RegIns.Host/RegIns.Host.csproj" />
+  <Project Path="src/RegIns.Cli/RegIns.Cli.csproj" />
+  <Project Path="src/RegIns.Gui/RegIns.Gui.csproj" />
+  <Project Path="tests/RegIns.Tests/RegIns.Tests.csproj" />
+</Solution>
